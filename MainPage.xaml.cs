@@ -65,6 +65,7 @@ namespace Due
 
             todayItems.ItemsSource = todayList;
             tomorrowItems.ItemsSource = tomorrowList;
+            somedayItems.ItemsSource = somedayList;
         }
 
         private void AddNew(object sender, EventArgs e)

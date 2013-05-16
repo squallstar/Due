@@ -61,11 +61,11 @@
                         <DataTemplate>
                             <Grid Margin="0, 25, 0, 0">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="38"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Grid Background="#D2D2D2" Height="40" VerticalAlignment="Top">
-                                    <Grid Width="36" Height="36" Background="White"></Grid>
+                                <Grid Background="#D2D2D2" Height="38" VerticalAlignment="Top">
+                                    <Grid Width="34" Height="34" Background="White"></Grid>
                                 </Grid>
                                 <TextBlock Margin="15, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="26" LineHeight="30" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
                             </Grid>
@@ -79,7 +79,7 @@
 
                 <controls:PivotItem.Header>
                     <Grid Canvas.ZIndex="1" Margin="0, 25, 0, 0">
-                        <TextBlock Canvas.ZIndex="0" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" Text="TOMORROW" Margin="0" FontSize="31" Foreground="White" />
+                        <TextBlock Canvas.ZIndex="0" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" Text="TOMORROW" Margin="0,0,-10,0" FontSize="31" Foreground="White" />
                     </Grid>
                 </controls:PivotItem.Header>
 
@@ -89,11 +89,11 @@
                         <DataTemplate>
                             <Grid Margin="0, 25, 0, 0">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="38"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Grid Background="#D2D2D2" Height="40" VerticalAlignment="Top">
-                                    <Grid Width="36" Height="36" Background="White"></Grid>
+                                <Grid Background="#D2D2D2" Height="38" VerticalAlignment="Top">
+                                    <Grid Width="34" Height="34" Background="White"></Grid>
                                 </Grid>
                                 <TextBlock Margin="15, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="26" LineHeight="30" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
                             </Grid>
@@ -101,6 +101,35 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
             </controls:PivotItem>
+
+            <!--Pivot item three-->
+            <controls:PivotItem>
+
+                <controls:PivotItem.Header>
+                    <Grid Canvas.ZIndex="1" Margin="0, 25, 0, 0">
+                        <TextBlock Canvas.ZIndex="0" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" Text="SOMEDAY" Margin="0,0,-10,0" FontSize="31" Foreground="White" />
+                    </Grid>
+                </controls:PivotItem.Header>
+
+                <!--Triple line list no text wrapping-->
+                <ListBox x:Name="somedayItems" Margin="8, -17 0, 0" ItemsSource="{Binding Items}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0, 25, 0, 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="38"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Background="#D2D2D2" Height="38" VerticalAlignment="Top">
+                                    <Grid Width="34" Height="34" Background="White"></Grid>
+                                </Grid>
+                                <TextBlock Margin="15, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="26" LineHeight="30" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PivotItem>
+
         </controls:Pivot>
     </Grid>
 
