@@ -58,6 +58,10 @@ namespace Due
             // Phone-specific initialization
             InitializePhoneApplication();
 
+            (Resources["PhoneForegroundBrush"] as SolidColorBrush).Color = Colors.Black;
+            (Resources["PhoneBackgroundBrush"] as SolidColorBrush).Color = Colors.White;
+            (Resources["PhoneSubtleBrush"] as SolidColorBrush).Color = Color.FromArgb(0x99, 0xFF, 0xFF, 0xFF); 
+
             // Show graphics profiling information while debugging.
             if (System.Diagnostics.Debugger.IsAttached)
             {
@@ -91,20 +95,23 @@ namespace Due
                 //Sample data
                 Todo i = new Todo
                 {
-                    Title = "This todo should be done today",
-                    DateInsert = DateTime.Now
+                    Title = "This todo item it's today",
+                    DateInsert = DateTime.Now,
+                    DueDate = DateTime.Today
                 };
 
                 Todo i2 = new Todo
                 {
                     Title = "Remember to buy the milk, although this todo is very long",
-                    DateInsert = DateTime.Now
+                    DateInsert = DateTime.Now,
+                    DueDate = DateTime.Today
                 };
 
                 Todo i3 = new Todo
                 {
-                    Title = "London is very sunny right now",
-                    DateInsert = DateTime.Now
+                    Title = "London is very sunny tomorrow",
+                    DateInsert = DateTime.Now,
+                    DueDate = DateTime.Today.AddDays(1)
                 };
 
                 db.todos.InsertOnSubmit(i);
@@ -178,7 +185,7 @@ namespace Due
 
             // Create the frame but don't set it as RootVisual yet; this allows the splash
             // screen to remain active until the application is ready to render.
-            RootFrame = new PhoneApplicationFrame();
+            RootFrame = new TransitionFrame();
             RootFrame.Navigated += CompleteInitializePhoneApplication;
 
             // Handle navigation failures

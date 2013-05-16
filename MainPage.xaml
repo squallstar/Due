@@ -20,7 +20,7 @@
     <toolkit:TransitionService.NavigationInTransition>
         <toolkit:NavigationInTransition>
             <toolkit:NavigationInTransition.Backward>
-                <toolkit:SlideTransition Mode="SlideRightFadeIn"/>
+                <toolkit:SlideTransition Mode="SlideDownFadeIn"/>
             </toolkit:NavigationInTransition.Backward>
             <toolkit:NavigationInTransition.Forward>
                 <toolkit:SlideTransition Mode="SlideDownFadeIn"/>
@@ -33,7 +33,7 @@
                 <toolkit:SlideTransition Mode="SlideUpFadeOut"/>
             </toolkit:NavigationOutTransition.Backward>
             <toolkit:NavigationOutTransition.Forward>
-                <toolkit:SlideTransition Mode="SlideDownFadeOut"/>
+                <toolkit:SlideTransition Mode="SlideUpFadeOut"/>
             </toolkit:NavigationOutTransition.Forward>
         </toolkit:NavigationOutTransition>
     </toolkit:TransitionService.NavigationOutTransition>
@@ -84,18 +84,18 @@
                 </controls:PivotItem.Header>
 
                 <!--Triple line list no text wrapping-->
-                <ListBox x:Name="SecondListBox" Margin="8, -17 0, 0" ItemsSource="{Binding Items}">
+                <ListBox x:Name="tomorrowItems" Margin="8, -17 0, 0" ItemsSource="{Binding Items}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid Margin="0, 25, 0, 0">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="35"/>
+                                    <ColumnDefinition Width="40"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Grid Background="#D2D2D2" Height="35" VerticalAlignment="Top">
-                                    <Grid Width="33" Height="33" Background="White"></Grid>
+                                <Grid Background="#D2D2D2" Height="40" VerticalAlignment="Top">
+                                    <Grid Width="36" Height="36" Background="White"></Grid>
                                 </Grid>
-                                <TextBlock Margin="15, 0, 0, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="25" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
+                                <TextBlock Margin="15, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="26" LineHeight="30" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -108,7 +108,7 @@
         <shell:ApplicationBar BackgroundColor="#9B9B9B" IsVisible="True" IsMenuEnabled="True">
             <shell:ApplicationBarIconButton IconUri="/Resources/add.png" Text="Add new" Click="AddNew"/>
             <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="clear completed items"/>
+                <shell:ApplicationBarMenuItem Text="clear completed items" Click="ClearCompleted"/>
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>

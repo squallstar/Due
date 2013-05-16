@@ -42,8 +42,29 @@ namespace Due
         {
             base.OnNavigatedTo(e);
 
+            this.RefreshData();
+        }
+
+        private void RefreshData()
+        {
             var collection = (from Todo s in this.db.todos select s).ToList();
-            todayItems.ItemsSource = collection;
+
+            DateTime today = DateTime.Today;
+            DateTime tomorrow = DateTime.Today.AddDays(1);
+
+            var todayList = new List<Todo>();
+            var tomorrowList = new List<Todo>();
+            var somedayList = new List<Todo>();
+
+            foreach (var todo in collection)
+            {
+                if (todo.DueDate == today) todayList.Add(todo);
+                else if (todo.DueDate == tomorrow) tomorrowList.Add(todo);
+                else somedayList.Add(todo);
+            }
+
+            todayItems.ItemsSource = todayList;
+            tomorrowItems.ItemsSource = tomorrowList;
         }
 
         private void AddNew(object sender, EventArgs e)
@@ -63,6 +84,16 @@ namespace Due
                     break;
             }
             NavigationService.Navigate(new Uri("/AddTodo.xaml", UriKind.Relative));
+        }
+
+        private void ClearCompleted(object sender, EventArgs e)
+        {
+            var completed = (from Todo t in db.todos where t.Completed == true select t).ToList();
+            if (completed.Count > 0)
+            {
+                db.todos.DeleteAllOnSubmit(completed);
+                this.RefreshData();
+            }
         }
     }
 }

@@ -58,6 +58,40 @@ namespace Due.Data
             }
         }
 
+        private DateTime _duedate;
+
+        [Column]
+        public DateTime DueDate
+        {
+            get { return _duedate; }
+            set
+            {
+                if (_duedate != value)
+                {
+                    NotifyPropertyChanging("DueDate");
+                    _duedate = value;
+                    NotifyPropertyChanged("DueDate");
+                }
+            }
+        }
+
+        private bool _completed;
+
+        [Column]
+        public bool Completed
+        {
+            get { return _completed; }
+            set
+            {
+                if (_completed != value)
+                {
+                    NotifyPropertyChanging("Completed");
+                    _completed = value;
+                    NotifyPropertyChanged("Completed");
+                }
+            }
+        }
+
         #region INotifyPropertyChanged Members
 
         public event PropertyChangedEventHandler PropertyChanged;

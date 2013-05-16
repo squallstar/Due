@@ -45,20 +45,21 @@ namespace Due
             {
                 var item = new Todo
                 {
-                    Title = txtDescription.Text.Trim()
+                    Title = txtDescription.Text.Trim(),
+                    DateInsert = DateTime.Now
                 };
 
                 if (NavigationContext.QueryString.ContainsKey("today"))
                 {
-                    item.DateInsert = DateTime.Today;
+                    item.DueDate = DateTime.Today;
                 }
                 else if (NavigationContext.QueryString.ContainsKey("tomorrow"))
                 {
-                    item.DateInsert = DateTime.Today.AddDays(1);
+                    item.DueDate = DateTime.Today.AddDays(1);
                 }
                 else
                 {
-                    item.DateInsert = DateTime.Today.AddDays(60);
+                    item.DueDate = DateTime.Today.AddDays(60);
                 }
 
                 var db = Context.Current;
