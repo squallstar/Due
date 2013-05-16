@@ -35,13 +35,34 @@ namespace Due
         // Load data for the ViewModel Items
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
+            
+        }
+
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
             var collection = (from Todo s in this.db.todos select s).ToList();
             todayItems.ItemsSource = collection;
         }
 
         private void AddNew(object sender, EventArgs e)
         {
+            switch (mainPivot.SelectedIndex)
+            {
+                case 0:
+                    NavigationService.Navigate(new Uri("/AddTodo.xaml?today", UriKind.Relative));
+                    break;
 
+                case 1:
+                    NavigationService.Navigate(new Uri("/AddTodo.xaml?tomorrow", UriKind.Relative));
+                    break;
+
+                case 2:
+                    NavigationService.Navigate(new Uri("/AddTodo.xaml?someday", UriKind.Relative));
+                    break;
+            }
+            NavigationService.Navigate(new Uri("/AddTodo.xaml", UriKind.Relative));
         }
     }
 }

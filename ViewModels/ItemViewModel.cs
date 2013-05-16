@@ -41,7 +41,7 @@ namespace Due
         /// Sample ViewModel property; this property is used in the view to display its value using a Binding.
         /// </summary>
         /// <returns></returns>
-        public string LineTwo
+        public string Title
         {
             get
             {

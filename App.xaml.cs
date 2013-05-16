@@ -91,11 +91,26 @@ namespace Due
                 //Sample data
                 Todo i = new Todo
                 {
-                    Title = "Hello world by Nicholas",
+                    Title = "This todo should be done today",
+                    DateInsert = DateTime.Now
+                };
+
+                Todo i2 = new Todo
+                {
+                    Title = "Remember to buy the milk, although this todo is very long",
+                    DateInsert = DateTime.Now
+                };
+
+                Todo i3 = new Todo
+                {
+                    Title = "London is very sunny right now",
                     DateInsert = DateTime.Now
                 };
 
                 db.todos.InsertOnSubmit(i);
+                db.todos.InsertOnSubmit(i2);
+                db.todos.InsertOnSubmit(i3);
+
                 db.SubmitChanges();
             }
         }
