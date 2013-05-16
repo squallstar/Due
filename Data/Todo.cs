@@ -92,6 +92,21 @@ namespace Due.Data
             }
         }
 
+        public string CurrentCompletedImage
+        {
+            get
+            {
+                if (Completed)
+                {
+                    return "/Resources/check.png";
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
+
         #region INotifyPropertyChanged Members
 
         public event PropertyChangedEventHandler PropertyChanged;

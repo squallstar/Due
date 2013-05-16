@@ -104,7 +104,8 @@ namespace Due
                 {
                     Title = "Remember to buy the milk, although this todo is very long",
                     DateInsert = DateTime.Now,
-                    DueDate = DateTime.Today
+                    DueDate = DateTime.Today,
+                    Completed = true
                 };
 
                 Todo i3 = new Todo

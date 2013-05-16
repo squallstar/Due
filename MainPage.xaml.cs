@@ -68,6 +68,8 @@ namespace Due
             somedayItems.ItemsSource = somedayList;
         }
 
+
+
         private void AddNew(object sender, EventArgs e)
         {
             switch (mainPivot.SelectedIndex)
