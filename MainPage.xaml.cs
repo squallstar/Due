@@ -102,6 +102,10 @@ namespace Due
         private void TodoTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             Todo item = (sender as Grid).DataContext as Todo;
+
+            (Application.Current as App).state = item;
+
+            NavigationService.Navigate(new Uri("/ViewTodo.xaml", UriKind.Relative));
         }
     }
 }

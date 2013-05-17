@@ -64,7 +64,7 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Margin="10, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="40" LineHeight="30" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
+                                <TextBlock Margin="9, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="40" LineHeight="30" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
                                 <TextBlock Grid.Row="1" Margin="10, 6, 10, -6" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" FontSize="18" LineHeight="22" Text="{Binding TimeAgo}" TextWrapping="Wrap" Foreground="#D4D4D4"/>
                             </Grid>
                         </DataTemplate>
@@ -82,18 +82,16 @@
                 </controls:PivotItem.Header>
 
                 <!--Triple line list no text wrapping-->
-                <ListBox x:Name="tomorrowItems" Margin="8, -17 0, 0" ItemsSource="{Binding Items}">
+                <ListBox x:Name="tomorrowItems" Margin="0, -17 0, 0" ItemsSource="{Binding Items}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Grid Margin="0, 25, 0, 0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="38"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid Background="#D2D2D2" Height="38" VerticalAlignment="Top">
-                                    <Grid Width="34" Height="34" Background="White"></Grid>
-                                </Grid>
-                                <TextBlock Margin="15, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="26" LineHeight="30" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
+                            <Grid Margin="0, 30, 0, 0" Tap="TodoTap">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Margin="9, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="40" LineHeight="30" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
+                                <TextBlock Grid.Row="1" Margin="10, 6, 10, -6" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" FontSize="18" LineHeight="22" Text="{Binding TimeAgo}" TextWrapping="Wrap" Foreground="#D4D4D4"/>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -110,18 +108,16 @@
                 </controls:PivotItem.Header>
 
                 <!--Triple line list no text wrapping-->
-                <ListBox x:Name="somedayItems" Margin="8, -17 0, 0" ItemsSource="{Binding Items}">
+                <ListBox x:Name="somedayItems" Margin="0, -17 0, 0" ItemsSource="{Binding Items}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Grid Margin="0, 25, 0, 0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="38"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid Background="#D2D2D2" Height="38" VerticalAlignment="Top">
-                                    <Grid Width="34" Height="34" Background="White"></Grid>
-                                </Grid>
-                                <TextBlock Margin="15, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="26" LineHeight="30" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
+                            <Grid Margin="0, 30, 0, 0" Tap="TodoTap">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Margin="9, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="40" LineHeight="30" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
+                                <TextBlock Grid.Row="1" Margin="10, 6, 10, -6" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" FontSize="18" LineHeight="22" Text="{Binding TimeAgo}" TextWrapping="Wrap" Foreground="#D4D4D4"/>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>

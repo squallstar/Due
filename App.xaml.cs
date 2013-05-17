@@ -44,6 +44,8 @@ namespace Due
 
         public Context db;
 
+        public object state;
+
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>

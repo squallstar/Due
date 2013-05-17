@@ -45,7 +45,7 @@ namespace Due
                     }
                     else
                     {
-                        return prefix + (prefix != "" ? " " : "") + "few seconds ago";
+                        return prefix + (prefix != "" ? " " : "") + "just added";
                     }
                 }
             }
