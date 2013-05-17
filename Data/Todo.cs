@@ -92,18 +92,11 @@ namespace Due.Data
             }
         }
 
-        public string CurrentCompletedImage
+        public string TimeAgo
         {
             get
             {
-                if (Completed)
-                {
-                    return "/Resources/check.png";
-                }
-                else
-                {
-                    return "";
-                }
+                return Utilities.TimeAgo(this.DateInsert, "added").ToUpper();
             }
         }
 

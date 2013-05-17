@@ -98,5 +98,10 @@ namespace Due
                 this.RefreshData();
             }
         }
+
+        private void TodoTap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            Todo item = (sender as Grid).DataContext as Todo;
+        }
     }
 }
