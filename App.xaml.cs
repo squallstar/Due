@@ -104,7 +104,7 @@ namespace Due
 
                 Todo i2 = new Todo
                 {
-                    Title = "Remember to buy the milk, although this todo is very long",
+                    Title = "This should be done very soon",
                     DateInsert = DateTime.Now,
                     DueDate = DateTime.Today,
                     Completed = true
@@ -112,9 +112,9 @@ namespace Due
 
                 Todo i3 = new Todo
                 {
-                    Title = "London is very sunny tomorrow",
+                    Title = "Take your time, there's no rush to do this",
                     DateInsert = DateTime.Now,
-                    DueDate = DateTime.Today.AddDays(1)
+                    DueDate = DateTime.Today.AddDays(60)
                 };
 
                 db.todos.InsertOnSubmit(i);
@@ -126,6 +126,12 @@ namespace Due
             else
             {
                 //Delete old todo
+                var x = (from Todo t in db.todos where t.Completed == true && t.DateInsert <= DateTime.Today.AddDays(-7) select t).ToList();
+                if (x.Count > 0)
+                {
+                    db.todos.DeleteAllOnSubmit(x);
+                    db.SubmitChanges();
+                }
             }
         }
 
