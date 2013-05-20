@@ -14,6 +14,7 @@ using Due.Data;
 using Microsoft.Phone.Tasks;
 using Microsoft.Phone.Data.Linq;
 using System.Collections.ObjectModel;
+using System.IO.IsolatedStorage;
 
 namespace Due
 {
@@ -50,6 +51,11 @@ namespace Due
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+
+            if (!IsolatedStorageSettings.ApplicationSettings.Contains("setup"))
+            {
+                NavigationService.Navigate(new Uri("/Tutorial.xaml", UriKind.Relative));
+            }
 
             this.RefreshData();
         }
