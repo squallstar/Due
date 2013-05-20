@@ -7,6 +7,14 @@ namespace Due
 {
     class Utilities
     {
+        public static DateTime Someday
+        {
+            get
+            {
+                return DateTime.Today.AddDays(60);
+            }
+        }
+
         public static string TimeAgo(DateTime since, string prefix = "updated")
         {
             //if (prefix == "updated") prefix = AppResources.updated;
@@ -45,7 +53,7 @@ namespace Due
                     }
                     else
                     {
-                        return prefix + (prefix != "" ? " " : "") + "just added";
+                        return prefix + (prefix != "" ? " " : "") + "few seconds ago";
                     }
                 }
             }

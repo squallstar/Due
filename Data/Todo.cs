@@ -100,6 +100,14 @@ namespace Due.Data
             }
         }
 
+        public bool Overdue
+        {
+            get
+            {
+                return this.DueDate.CompareTo(DateTime.Today) <= 0;
+            }
+        }
+
         #region INotifyPropertyChanged Members
 
         public event PropertyChangedEventHandler PropertyChanged;

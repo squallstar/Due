@@ -59,7 +59,7 @@ namespace Due
                 }
                 else
                 {
-                    item.DueDate = DateTime.Today.AddDays(60);
+                    item.DueDate = Utilities.Someday;
                 }
 
                 var db = Context.Current;

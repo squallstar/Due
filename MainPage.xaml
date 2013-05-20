@@ -56,7 +56,7 @@
                     </Grid>
                 </controls:PivotItem.Header>
 
-                <ListBox x:Name="todayItems" Margin="0, -17 0, 0" ItemsSource="{Binding Items}">
+                <ListBox x:Name="todayItems" Margin="0, -7 0, 0" ItemsSource="{Binding Items}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid Margin="0, 30, 0, 0" Tap="TodoTap">
@@ -82,7 +82,7 @@
                 </controls:PivotItem.Header>
 
                 <!--Triple line list no text wrapping-->
-                <ListBox x:Name="tomorrowItems" Margin="0, -17 0, 0" ItemsSource="{Binding Items}">
+                <ListBox x:Name="tomorrowItems" Margin="0, -7 0, 0" ItemsSource="{Binding Items}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid Margin="0, 30, 0, 0" Tap="TodoTap">
@@ -108,7 +108,7 @@
                 </controls:PivotItem.Header>
 
                 <!--Triple line list no text wrapping-->
-                <ListBox x:Name="somedayItems" Margin="0, -17 0, 0" ItemsSource="{Binding Items}">
+                <ListBox x:Name="somedayItems" Margin="0, -7 0, 0" ItemsSource="{Binding Items}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <Grid Margin="0, 30, 0, 0" Tap="TodoTap">

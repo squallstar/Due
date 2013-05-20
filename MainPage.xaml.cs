@@ -47,7 +47,7 @@ namespace Due
 
         private void RefreshData()
         {
-            var collection = (from Todo s in this.db.todos select s).ToList();
+            var collection = (from Todo s in this.db.todos orderby s.Completed ascending, s.DateInsert descending select s).ToList();
 
             DateTime today = DateTime.Today;
             DateTime tomorrow = DateTime.Today.AddDays(1);
@@ -58,7 +58,7 @@ namespace Due
 
             foreach (var todo in collection)
             {
-                if (todo.DueDate == today) todayList.Add(todo);
+                if (todo.Overdue) todayList.Add(todo);
                 else if (todo.DueDate == tomorrow) tomorrowList.Add(todo);
                 else somedayList.Add(todo);
             }
