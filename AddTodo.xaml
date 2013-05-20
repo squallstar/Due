@@ -59,13 +59,13 @@
                     <ColumnDefinition Width="6"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="60" />
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="6" />
                 </Grid.RowDefinitions>
 
                 <Grid Height="13" Background="#D8D8D8" VerticalAlignment="Bottom"></Grid>
-                <Grid Grid.Column="1" Height="60">
-                    <TextBox Name="txtDescription" FontFamily="/Fonts/Light.ttf#BentonSans-Light" FontSize="24" Text="Hello world by Nicholas" Foreground="#777777" Background="Transparent" Height="70" Padding="0" Margin="0" InputScope="Text" />
+                <Grid Grid.Column="1">
+                    <TextBox AcceptsReturn="True" TextWrapping="Wrap" Name="txtDescription" FontFamily="/Fonts/Light.ttf#BentonSans-Light" FontSize="24" Text="Hello world by Nicholas" Foreground="#777777" Background="Transparent" Height="Auto" Padding="0" Margin="0" InputScope="Text" />
                 </Grid>
                 <Grid Grid.Column="2" Height="13" Background="#D8D8D8" VerticalAlignment="Bottom"></Grid>
 
