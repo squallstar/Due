@@ -97,7 +97,7 @@ namespace Due
                 //Sample data
                 Todo i = new Todo
                 {
-                    Title = "This todo item it's today",
+                    Title = "This item it's due today",
                     DateInsert = DateTime.Now,
                     DueDate = DateTime.Today
                 };
@@ -146,6 +146,7 @@ namespace Due
         // This code will not execute when the application is closing
         private void Application_Deactivated(object sender, DeactivatedEventArgs e)
         {
+            db.UpdateTileCount();
         }
 
         // Code to execute when the application is closing (eg, user hit Back)
@@ -153,6 +154,7 @@ namespace Due
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
             // Ensure that required application state is persisted here.
+            db.UpdateTileCount();
         }
 
         // Code to execute if a navigation fails

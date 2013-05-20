@@ -47,7 +47,7 @@ namespace Due
 
         private void RefreshData()
         {
-            var collection = (from Todo s in this.db.todos orderby s.Completed ascending, s.DateInsert descending select s).ToList();
+            var collection = (from Todo s in this.db.todos orderby s.Completed, s.DateInsert select s).ToList();
 
             DateTime today = DateTime.Today;
             DateTime tomorrow = DateTime.Today.AddDays(1);
