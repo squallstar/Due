@@ -41,7 +41,7 @@
 
             <Image Source="/Resources/Tutorial.png" />
 
-            <Grid Name="btnStart" Tap="CloseTutorial" Background="#EAEAEA" Margin="0,50,0,0">
+            <Grid Name="btnStart" Tap="CloseTutorial" Background="#EAEAEA" Margin="0,35,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>

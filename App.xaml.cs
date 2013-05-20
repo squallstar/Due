@@ -98,22 +98,21 @@ namespace Due
                 Todo i = new Todo
                 {
                     Title = "This item it's due today",
-                    DateInsert = DateTime.Now,
+                    DateInsert = DateTime.Today,
                     DueDate = DateTime.Today
                 };
 
                 Todo i2 = new Todo
                 {
                     Title = "This should be done very soon",
-                    DateInsert = DateTime.Now,
-                    DueDate = DateTime.Today,
-                    Completed = true
+                    DateInsert = DateTime.Now.AddMinutes(-40),
+                    DueDate = DateTime.Today.AddDays(1)
                 };
 
                 Todo i3 = new Todo
                 {
                     Title = "Take your time, there's no rush to do this",
-                    DateInsert = DateTime.Now,
+                    DateInsert = DateTime.Today.AddDays(-5),
                     DueDate = DateTime.Today.AddDays(60)
                 };
 
