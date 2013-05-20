@@ -13,12 +13,17 @@ using Microsoft.Phone.Controls;
 using Due.Data;
 using Microsoft.Phone.Tasks;
 using Microsoft.Phone.Data.Linq;
+using System.Collections.ObjectModel;
 
 namespace Due
 {
     public partial class MainPage : PhoneApplicationPage
     {
         private Context db;
+
+        ObservableCollection<Todo> todayList;
+        ObservableCollection<Todo> tomorrowList;
+        ObservableCollection<Todo> somedayList;
 
         // Constructor
         public MainPage()
@@ -30,6 +35,10 @@ namespace Due
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
 
             this.db = Context.Current;
+
+            todayList = new ObservableCollection<Todo>();
+            tomorrowList = new ObservableCollection<Todo>();
+            somedayList = new ObservableCollection<Todo>();
         }
 
         // Load data for the ViewModel Items
@@ -52,9 +61,9 @@ namespace Due
             DateTime today = DateTime.Today;
             DateTime tomorrow = DateTime.Today.AddDays(1);
 
-            var todayList = new List<Todo>();
-            var tomorrowList = new List<Todo>();
-            var somedayList = new List<Todo>();
+            todayList.Clear();
+            tomorrowList.Clear();
+            somedayList.Clear();
 
             foreach (var todo in collection)
             {
@@ -66,6 +75,11 @@ namespace Due
             todayItems.ItemsSource = todayList;
             tomorrowItems.ItemsSource = tomorrowList;
             somedayItems.ItemsSource = somedayList;
+
+            foreach (var obj in todayItems.Items)
+            {
+                System.Diagnostics.Debug.WriteLine(obj.GetType());
+            }
         }
 
 
@@ -103,9 +117,19 @@ namespace Due
         {
             Todo item = (sender as Grid).DataContext as Todo;
 
-            (Application.Current as App).state = item;
+            if (item.Completed)
+            {
+                if (todayList.Contains(item)) todayList.Remove(item);
 
-            NavigationService.Navigate(new Uri("/ViewTodo.xaml", UriKind.Relative));
+                this.db.todos.DeleteOnSubmit(item);
+                this.db.SubmitChanges();
+            }
+            else
+            {
+                (Application.Current as App).state = item;
+
+                NavigationService.Navigate(new Uri("/ViewTodo.xaml", UriKind.Relative));
+            }
         }
     }
 }

@@ -93,7 +93,7 @@ namespace Due
                 //Create the database
                 this.db.CreateDatabase();
                 this.db = new Context();
-                
+
                 //Sample data
                 Todo i = new Todo
                 {
@@ -122,6 +122,10 @@ namespace Due
                 db.todos.InsertOnSubmit(i3);
 
                 db.SubmitChanges();
+            }
+            else
+            {
+                //Delete old todo
             }
         }
 

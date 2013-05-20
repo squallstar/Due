@@ -108,6 +108,14 @@ namespace Due.Data
             }
         }
 
+        public double UIOpacity
+        {
+            get
+            {
+                return this.Completed ? 0.3 : 1.0;
+            }
+        }
+
         #region INotifyPropertyChanged Members
 
         public event PropertyChangedEventHandler PropertyChanged;

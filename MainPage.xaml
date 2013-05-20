@@ -59,7 +59,7 @@
                 <ListBox x:Name="todayItems" Margin="0, -7 0, 0" ItemsSource="{Binding Items}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <Grid Margin="0, 30, 0, 0" Tap="TodoTap">
+                            <Grid Opacity="{Binding UIOpacity}" Margin="0, 30, 0, 0" Tap="TodoTap">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
