@@ -137,6 +137,7 @@
             <shell:ApplicationBarIconButton IconUri="/Resources/add.png" Text="Add new" Click="AddNew"/>
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="clear completed items" Click="ClearCompleted"/>
+                <shell:ApplicationBarMenuItem Text="about" Click="About"/>
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>

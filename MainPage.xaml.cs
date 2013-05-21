@@ -120,6 +120,11 @@ namespace Due
             }
         }
 
+        private void About(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/About.xaml", UriKind.Relative));
+        }
+
         private void TodoTap(object sender, System.Windows.Input.GestureEventArgs e)
         {
             Todo item = (sender as Grid).DataContext as Todo;
