@@ -112,7 +112,7 @@ namespace Due.Data
         {
             get
             {
-                return this.Completed ? 0.3 : 1.0;
+                return this.Completed ? 0.25 : 1.0;
             }
         }
 

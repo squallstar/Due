@@ -115,6 +115,7 @@ namespace Due
             if (completed.Count > 0)
             {
                 db.todos.DeleteAllOnSubmit(completed);
+                db.SubmitChanges();
                 this.RefreshData();
             }
         }
@@ -126,6 +127,8 @@ namespace Due
             if (item.Completed)
             {
                 if (todayList.Contains(item)) todayList.Remove(item);
+                if (tomorrowList.Contains(item)) tomorrowList.Remove(item);
+                if (somedayList.Contains(item)) somedayList.Remove(item);
 
                 this.db.todos.DeleteOnSubmit(item);
                 this.db.SubmitChanges();

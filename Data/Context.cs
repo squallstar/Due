@@ -29,9 +29,9 @@ namespace Due.Data
             ShellTile appTile = ShellTile.ActiveTiles.First();
             if (appTile != null)
             {
-                var count = (from Todo item in todos where item.DueDate <= DateTime.Today select item).Count();
+                var count = (from Todo item in todos where item.Completed == false && item.DueDate <= DateTime.Today select item).Count();
 
-                var firstItem = (from Todo s in todos where s.DueDate <= DateTime.Today orderby s.Completed, s.DateInsert select s).FirstOrDefault();
+                var firstItem = (from Todo s in todos where s.Completed == false && s.DueDate <= DateTime.Today orderby s.DateInsert select s).FirstOrDefault();
 
                 StandardTileData newTile = new StandardTileData
                 {
