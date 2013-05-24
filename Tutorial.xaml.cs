@@ -18,11 +18,22 @@ namespace Due
             InitializeComponent();
         }
 
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            if (NavigationService.CanGoBack)
+            {
+                NavigationService.RemoveBackEntry();
+            }
+        }
+
         private void CloseTutorial(object sender, System.Windows.Input.GestureEventArgs e)
         {
             IsolatedStorageSettings.ApplicationSettings.Add("setup", 1);
             IsolatedStorageSettings.ApplicationSettings.Save();
-            NavigationService.GoBack();
+
+            NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
         }
     }
 }

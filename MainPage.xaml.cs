@@ -57,6 +57,11 @@ namespace Due
                 NavigationService.Navigate(new Uri("/Tutorial.xaml", UriKind.Relative));
             }
 
+            if (NavigationService.CanGoBack)
+            {
+                NavigationService.RemoveBackEntry();
+            }
+
             this.RefreshData();
         }
 

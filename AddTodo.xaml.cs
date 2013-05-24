@@ -67,9 +67,8 @@ namespace Due
                 db.todos.InsertOnSubmit(item);
                 db.SubmitChanges();
 
-            }
-
-            NavigationService.GoBack();
+                NavigationService.GoBack();
+            }            
         }
     }
 }
