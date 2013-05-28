@@ -44,7 +44,7 @@
         <ScrollViewer>
             <StackPanel Grid.Row="0" Margin="40, 60, 40, 0">
                 <TextBlock Name="todoTitle" Margin="0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="30" LineHeight="35" Text="My long text" TextWrapping="Wrap" Foreground="Black"/>
-                <TextBlock Grid.Row="1" Margin="0, 20, 0, 45" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" FontSize="18" LineHeight="22" Text="ADDED FEW SECONDS AGO" TextWrapping="Wrap" Foreground="#D4D4D4"/>
+                <TextBlock Name="todoAddedDate" Grid.Row="1" Margin="0, 20, 0, 45" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" FontSize="18" LineHeight="22" Text="ADDED FEW SECONDS AGO" TextWrapping="Wrap" Foreground="#D4D4D4"/>
 
                 <Grid Name="btnMarkCompleted" Tap="btnMarkCompleted_Tap" Background="#EAEAEA" Height="70">
                     <Grid.ColumnDefinitions>

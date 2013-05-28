@@ -42,7 +42,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Margin="30, 60, 30, 0">
-            <TextBlock Margin="0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="40" LineHeight="35" Text="Due - v1.0" TextWrapping="Wrap" Foreground="Black"/>
+            <TextBlock Margin="0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="40" LineHeight="35" Text="Due - v1.0.1" TextWrapping="Wrap" Foreground="Black"/>
             <TextBlock Margin="0, 20, 0, 0" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="24" LineHeight="35" Text="Thanks for trying out Due, an experimental project created by Nicholas Valbusa (Squallstar Studio), which recently made Collector for Windows Phone." TextWrapping="Wrap" Foreground="#999999"/>
             
             <TextBlock Margin="0, 20, 0, 0" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="24" LineHeight="35" Text="Do you like this app? Please write us a review on the Marketplace." TextWrapping="Wrap" Foreground="#999999"/>

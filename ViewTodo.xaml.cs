@@ -22,6 +22,7 @@ namespace Due
             this.item = (Application.Current as App).state as Todo;
 
             this.todoTitle.Text = this.item.Title;
+            this.todoAddedDate.Text = this.item.TimeAgo;
 
             if (item.Overdue)
             {
