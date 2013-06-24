@@ -49,6 +49,11 @@ namespace Due
 
         public object state;
 
+        Color foregroundColor;
+        Color backgroundColor;
+
+        public static string JumpToView = "";
+
         /// <summary>
         /// Constructor for the Application object.
         /// </summary>
@@ -63,8 +68,10 @@ namespace Due
             // Phone-specific initialization
             InitializePhoneApplication();
 
-            (Resources["PhoneForegroundBrush"] as SolidColorBrush).Color = Colors.Black;
-            (Resources["PhoneBackgroundBrush"] as SolidColorBrush).Color = Colors.White;
+            this.foregroundColor = (Resources["PhoneForegroundBrush"] as SolidColorBrush).Color;
+            this.backgroundColor = (Resources["PhoneBackgroundBrush"] as SolidColorBrush).Color;
+            this.OverrideColors();
+
             (Resources["PhoneSubtleBrush"] as SolidColorBrush).Color = Color.FromArgb(0x99, 0xFF, 0xFF, 0xFF); 
 
             // Show graphics profiling information while debugging.
@@ -137,6 +144,18 @@ namespace Due
                     db.SubmitChanges();
                 }
             }
+        }
+
+        public void OverrideColors()
+        {
+            (Resources["PhoneForegroundBrush"] as SolidColorBrush).Color = Colors.Black;
+            (Resources["PhoneBackgroundBrush"] as SolidColorBrush).Color = Colors.White;
+        }
+
+        public void RestoreColors()
+        {
+            (Resources["PhoneForegroundBrush"] as SolidColorBrush).Color = this.foregroundColor;
+            (Resources["PhoneBackgroundBrush"] as SolidColorBrush).Color = this.backgroundColor;
         }
 
         private void UpdateLocalDatabase()

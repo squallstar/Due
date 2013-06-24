@@ -8,6 +8,7 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Due.Data;
+using System.Windows.Media;
 
 namespace Due
 {
@@ -57,14 +58,24 @@ namespace Due
             else
             {
                 datePicker.Value = item.DueDate;
-                scheduledLabel.Text = "Scheduled for:";
+                scheduledLabel.Text = "This item is scheduled for";
                 datePicker.Visibility = Visibility.Visible;
+                btnSchedule.Background = new SolidColorBrush((Color)Application.Current.Resources["PhoneAccentColor"]);
             }
         }
 
         protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+
+            (Application.Current as App).OverrideColors();
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+
+            Utilities.SetMainViewIndex(this.item.DueDate);
         }
 
         private void DeleteTap(object sender, EventArgs e)
@@ -130,6 +141,11 @@ namespace Due
 
                 NavigationService.GoBack();
             }
+        }
+
+        private void datePicker_Tap(object sender, System.Windows.Input.GestureEventArgs e)
+        {
+            (Application.Current as App).RestoreColors();
         }
     }
 }

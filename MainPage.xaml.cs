@@ -62,6 +62,15 @@ namespace Due
                 NavigationService.RemoveBackEntry();
             }
 
+            if (App.JumpToView.Length > 0)
+            {
+                if (App.JumpToView == "today") mainPivot.SelectedIndex = 0;
+                else if (App.JumpToView == "tomorrow") mainPivot.SelectedIndex = 1;
+                else mainPivot.SelectedIndex = 2;
+
+                App.JumpToView = "";
+            }
+
             this.RefreshData();
         }
 

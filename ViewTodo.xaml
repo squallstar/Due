@@ -111,7 +111,7 @@
                     <Image Source="/Resources/calendar.png" Opacity="1" Height="55" VerticalAlignment="Top"/>
                     <StackPanel Grid.Column="1" Grid.Row="1" Margin="0, 18, 0, 0">
                         <TextBlock Name="scheduledLabel" Grid.Row="1" Margin="0,0,0,17" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" FontSize="20" Text="Schedule for a day" TextWrapping="Wrap" Foreground="#FFFFFF"/>
-                        <toolkit:DatePicker ValueChanged="datePicker_ValueChanged" Background="Transparent" Width="200" BorderBrush="White" BorderThickness="0" x:Name="datePicker" HorizontalAlignment="Left" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="20" Margin="-22, -20, 0, 0" Padding="0" Foreground="#FFFFFF"/>
+                        <toolkit:DatePicker ValueChanged="datePicker_ValueChanged" Background="Transparent" Width="200" BorderBrush="White" BorderThickness="0" x:Name="datePicker" HorizontalAlignment="Left" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="20" Margin="-22, -20, 0, 0" Padding="0" Foreground="#FFFFFF" Tap="datePicker_Tap"/>
 
                     </StackPanel>
                 </Grid>

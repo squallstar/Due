@@ -42,12 +42,15 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Margin="30, 60, 30, 0">
-            <TextBlock Margin="0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="40" LineHeight="35" Text="Due - v1.0.1" TextWrapping="Wrap" Foreground="Black"/>
+            <TextBlock Margin="0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="40" LineHeight="35" Text="Due - v1.0.2" TextWrapping="Wrap" Foreground="Black"/>
             <TextBlock Margin="0, 20, 0, 0" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="24" LineHeight="35" Text="Thanks for trying out Due, an experimental project created by Nicholas Valbusa (Squallstar Studio), which recently made Collector for Windows Phone." TextWrapping="Wrap" Foreground="#999999"/>
             
             <TextBlock Margin="0, 20, 0, 0" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="24" LineHeight="35" Text="Do you like this app? Please write us a review on the Marketplace." TextWrapping="Wrap" Foreground="#999999"/>
-            <TextBlock Margin="0, 20, 0, 0" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="24" LineHeight="35" Text="If the app gets some users, I'll be happy to add new features!" TextWrapping="Wrap" Foreground="#999999"/>
+            <TextBlock Margin="0, 20, 0, 0" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="24" LineHeight="35" Text="As I got thousands of downloads, I just released this update with new features such as the option to schedule an item for a particular day. If the app gets more users, I'll be happy to add more things!" TextWrapping="Wrap" Foreground="#999999"/>
 
+            <Grid x:Name="btnCollectorTry" Background="{StaticResource PhoneAccentBrush}" Height="60" Margin="0, 25, 0, 0" Tap="btnCollectorTry_Tap">
+                <TextBlock Foreground="White" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" FontSize="24" Text="TRY COLLECTOR FOR FREE" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            </Grid>
 
         </StackPanel>
     </Grid>
