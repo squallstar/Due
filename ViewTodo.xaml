@@ -90,16 +90,28 @@
                     <Image Source="/Resources/cell.down.png" Opacity="0.5"/>
                     <TextBlock Grid.Row="1" Margin="0" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" FontSize="20" Text="Do it someday" TextWrapping="Wrap" Foreground="#999999" VerticalAlignment="Center"/>
                 </Grid>
+                
+                <Grid Margin="0, 20, 0, 10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Background="#999999" Height="1" VerticalAlignment="Center"></Grid>
+                    <TextBlock Grid.Row="1" Margin="20,0,20,0" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" FontSize="20" Text="or" TextWrapping="Wrap" Foreground="#999999" VerticalAlignment="Center"/>
+                    <Grid Grid.Column="2" Background="#999999" Height="1" VerticalAlignment="Center"></Grid>
 
-                <Grid Name="btnSchedule" Tap="btnSchedule_Tap" Background="#FFFFFF" Margin="0,10,0,0">
+                </Grid>
+
+                <Grid Name="btnSchedule" Tap="btnSchedule_Tap" Background="#9B9B9B" Margin="0,10,0,0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="60" />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <Image Source="/Resources/calendar.png" Opacity="0.5" Height="70" VerticalAlignment="Top"/>
+                    <Image Source="/Resources/calendar.png" Opacity="1" Height="55" VerticalAlignment="Top"/>
                     <StackPanel Grid.Column="1" Grid.Row="1" Margin="0, 18, 0, 0">
-                        <TextBlock Grid.Row="1" Margin="0" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" FontSize="20" Text="Schedule for a day" TextWrapping="Wrap" Foreground="#999999"/>
-                        <toolkit:DatePicker ValueChanged="datePicker_ValueChanged" Visibility="Collapsed" Background="Transparent" Width="200" BorderBrush="White" BorderThickness="0" x:Name="datePicker" HorizontalAlignment="Left" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="20" Margin="-20, -10, 0, 0" Padding="0" Foreground="#999999"/>
+                        <TextBlock Name="scheduledLabel" Grid.Row="1" Margin="0,0,0,17" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" FontSize="20" Text="Schedule for a day" TextWrapping="Wrap" Foreground="#FFFFFF"/>
+                        <toolkit:DatePicker ValueChanged="datePicker_ValueChanged" Background="Transparent" Width="200" BorderBrush="White" BorderThickness="0" x:Name="datePicker" HorizontalAlignment="Left" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="20" Margin="-22, -20, 0, 0" Padding="0" Foreground="#FFFFFF"/>
 
                     </StackPanel>
                 </Grid>

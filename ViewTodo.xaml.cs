@@ -43,6 +43,8 @@ namespace Due
             DateTime today = DateTime.Today;
             if (item.ManualDueDate == null || item.ManualDueDate == false)
             {
+                datePicker.Visibility = Visibility.Collapsed;
+
                 if (item.DueDate == today || item.DueDate == today.AddDays(1))
                 {
                     datePicker.Value = item.DueDate;
@@ -55,7 +57,8 @@ namespace Due
             else
             {
                 datePicker.Value = item.DueDate;
-                this.datePicker.Visibility = Visibility.Visible;
+                scheduledLabel.Text = "Scheduled for:";
+                datePicker.Visibility = Visibility.Visible;
             }
         }
 
