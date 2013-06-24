@@ -58,5 +58,27 @@ namespace Due
                 }
             }
         }
+
+        public static string TimeInFuture(DateTime when, string prefix = "due")
+        {
+            TimeSpan diff = when.Subtract(DateTime.Now);
+
+            if (diff.TotalDays > 7)
+            {
+                return String.Format("{0} on {1}", prefix, when.ToString("MMM d"));
+            }
+            else if (diff.TotalDays >= 2)
+            {
+                return String.Format("{0} in {1} {2}", prefix, (int)diff.TotalDays, "days");
+            }
+            else if (diff.TotalDays == 1)
+            {
+                return String.Format("{0} tomorrow", prefix);
+            }
+            else
+            {
+                return String.Format("{0} today", prefix);
+            }
+        }
     }
 }

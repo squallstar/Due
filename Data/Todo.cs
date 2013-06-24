@@ -75,6 +75,23 @@ namespace Due.Data
             }
         }
 
+        private bool? _manualDueDate;
+
+        [Column(CanBeNull = true)]
+        public bool? ManualDueDate
+        {
+            get { return _manualDueDate; }
+            set
+            {
+                if (_manualDueDate != value)
+                {
+                    NotifyPropertyChanging("ManualDueDate");
+                    _manualDueDate = value;
+                    NotifyPropertyChanged("ManualDueDate");
+                }
+            }
+        }
+
         private bool _completed;
 
         [Column]
@@ -96,7 +113,17 @@ namespace Due.Data
         {
             get
             {
-                return Utilities.TimeAgo(this.DateInsert, "added").ToUpper();
+                string x = Utilities.TimeAgo(this.DateInsert, "added").ToUpper();
+
+                if (ManualDueDate != null && ManualDueDate == true)
+                {
+                    if (this.DueDate != DateTime.Today && this.DueDate != DateTime.Today.AddDays(1))
+                    {
+                        x += ", " + Utilities.TimeInFuture(this.DueDate).ToUpper();
+                    }
+                }
+
+                return x;
             }
         }
 

@@ -13,6 +13,7 @@ using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Due.Data;
+using Microsoft.Phone.Data.Linq;
 
 namespace Due
 {
@@ -43,6 +44,8 @@ namespace Due
         public PhoneApplicationFrame RootFrame { get; private set; }
 
         public Context db;
+
+        public static int DB_VERSION = 2;
 
         public object state;
 
@@ -124,12 +127,58 @@ namespace Due
             }
             else
             {
+                this.UpdateLocalDatabase();
+
                 //Delete old todo
                 var x = (from Todo t in db.todos where t.Completed == true && t.DateInsert <= DateTime.Today.AddDays(-7) select t).ToList();
                 if (x.Count > 0)
                 {
                     db.todos.DeleteAllOnSubmit(x);
                     db.SubmitChanges();
+                }
+            }
+        }
+
+        private void UpdateLocalDatabase()
+        {
+            try
+            {
+                // Check whether a database update is needed.
+                DatabaseSchemaUpdater dbUpdater = db.CreateDatabaseSchemaUpdater();
+                bool dbUpdated = false;
+
+                int SchemaVersion = dbUpdater.DatabaseSchemaVersion;
+
+                if (SchemaVersion < 2)
+                {
+                    dbUpdater.AddColumn<Todo>("ManualDueDate");
+                    dbUpdated = true;
+                }
+
+                if (dbUpdated)
+                {
+                    dbUpdater.DatabaseSchemaVersion = DB_VERSION;
+                    dbUpdater.Execute();
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+
+                DatabaseSchemaUpdater dbUpdater = db.CreateDatabaseSchemaUpdater();
+                if (dbUpdater.DatabaseSchemaVersion == 0)
+                {
+                    try
+                    {
+                        dbUpdater.AddTable<Todo>();
+                        dbUpdater.Execute();
+
+                        this.UpdateLocalDatabase();
+                    }
+                    catch (Exception exc)
+                    {
+                        System.Diagnostics.Debug.WriteLine(exc.Message);
+                    }
                 }
             }
         }
