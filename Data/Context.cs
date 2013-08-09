@@ -51,6 +51,22 @@ namespace Due.Data
                     newTile.BackBackgroundImage = new Uri("/Resources/BackBackground.png", UriKind.Relative);
                     newTile.BackContent = firstItem.Title;
                     newTile.BackTitle = "Due today";
+
+                    int length = 17;
+                    string title = firstItem.Title.Length > length ? firstItem.Title.Substring(0, length-1) + "..." : firstItem.Title;
+                    newTile.Title = title;
+
+                    if (count > 1)
+                    {
+                        var secondItem = (from Todo s in todos where s.Completed == false && s.DueDate <= DateTime.Today && s.ID != firstItem.ID orderby s.DateInsert select s).FirstOrDefault();
+                        if (secondItem != null)
+                        {
+                            newTile.BackBackgroundImage = null;
+                            newTile.BackContent = firstItem.Title + "\r\n" + secondItem.Title;
+                            newTile.BackTitle = count > 2 ? "+" + (count-2) + " more" :  "Due today";
+                        }
+
+                    }
                 }
 
                 appTile.Update(newTile);

@@ -2,10 +2,12 @@
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
   <App xmlns="" ProductID="{e0f2a978-d954-40e5-8a0f-a9914e3e290a}" Title="Due" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Nicholas Valbusa" Description="Due organises your todos between three different lists." Publisher="Squallstar Studio" BitsPerPixel="32">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
-    <Capabilities>
-    </Capabilities>
+    <Capabilities></Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+      <ExtendedTask Name="BackgroundTask">
+        <BackgroundServiceAgent Specifier="ScheduledTaskAgent" Name="DueAgent" Source="DueAgent" Type="DueAgent.ScheduledAgent" />
+      </ExtendedTask>
     </Tasks>
     <Tokens>
       <PrimaryToken TokenID="DueToken" TaskName="_default">

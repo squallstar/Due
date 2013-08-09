@@ -14,6 +14,7 @@ using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 using Due.Data;
 using Microsoft.Phone.Data.Linq;
+using Microsoft.Phone.Scheduler;
 
 namespace Due
 {
@@ -53,6 +54,9 @@ namespace Due
         Color backgroundColor;
 
         public static string JumpToView = "";
+
+        PeriodicTask periodicTask;
+        string periodicTaskName = "DueAgent";
 
         /// <summary>
         /// Constructor for the Application object.
@@ -144,6 +148,8 @@ namespace Due
                     db.SubmitChanges();
                 }
             }
+
+            StartPeriodicAgent();
         }
 
         public void OverrideColors()
@@ -199,6 +205,65 @@ namespace Due
                         System.Diagnostics.Debug.WriteLine(exc.Message);
                     }
                 }
+            }
+        }
+
+        private void StartPeriodicAgent()
+        {
+            // Obtain a reference to the period task, if one exists
+            periodicTask = ScheduledActionService.Find(periodicTaskName) as PeriodicTask;
+
+            // If the task already exists and background agents are enabled for the
+            // application, you must remove the task and then add it again to update 
+            // the schedule
+            if (periodicTask != null)
+            {
+                RemoveAgent(periodicTaskName);
+            }
+
+            periodicTask = new PeriodicTask(periodicTaskName);
+
+            // The description is required for periodic agents. This is the string that the user
+            // will see in the background services Settings page on the device.
+            periodicTask.Description = "This task updates the live tile with your today's tasks.";
+
+            // Place the call to Add in a try block in case the user has disabled agents.
+            try
+            {
+                ScheduledActionService.Add(periodicTask);
+
+                // If debugging is enabled, use LaunchForTest to launch the agent in one minute.
+#if(DEBUG_AGENT)
+    ScheduledActionService.LaunchForTest(periodicTaskName, TimeSpan.FromSeconds(60));
+#endif
+            }
+            catch (InvalidOperationException exception)
+            {
+                if (exception.Message.Contains("BNS Error: The action is disabled"))
+                {
+                    //Nothing
+                }
+
+                if (exception.Message.Contains("BNS Error: The maximum number of ScheduledActions of this type have already been added."))
+                {
+                    // No user action required. The system prompts the user when the hard limit of periodic tasks has been reached.
+
+                }
+            }
+            catch (SchedulerServiceException)
+            {
+                // No user action required.
+            }
+        }
+
+        private void RemoveAgent(string name)
+        {
+            try
+            {
+                ScheduledActionService.Remove(name);
+            }
+            catch (Exception)
+            {
             }
         }
 

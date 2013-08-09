@@ -73,11 +73,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\Context.cs" />
-    <Compile Include="Data\Todo.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Misc\Utilities.cs" />
+    <Compile Include="Misc\AppUtilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tutorial.xaml.cs">
       <DependentUpon>Tutorial.xaml</DependentUpon>
@@ -171,7 +170,16 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DueAgent\DueAgent.csproj">
+      <Project>{C3155FC8-82E1-4D50-BFB8-D4EF5F40EA3E}</Project>
+      <Name>DueAgent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DueLibs\DueLibs.csproj">
+      <Project>{344B3235-0512-495F-942A-C614EAA96AFA}</Project>
+      <Name>DueLibs</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

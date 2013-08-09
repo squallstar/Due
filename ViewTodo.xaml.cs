@@ -75,7 +75,7 @@ namespace Due
         {
             base.OnNavigatedFrom(e);
 
-            Utilities.SetMainViewIndex(this.item.DueDate);
+            AppUtilities.SetMainViewIndex(this.item.DueDate);
         }
 
         private void DeleteTap(object sender, EventArgs e)
