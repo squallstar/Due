@@ -1,0 +1,6 @@
+.DS_Store
+DueAgent/Bin
+DueAgent/obj
+DueLibs/Bin
+DueLibs/obj
+SharedLib/obj

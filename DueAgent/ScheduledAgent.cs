@@ -46,7 +46,6 @@ namespace DueAgent
         /// </remarks>
         protected override void OnInvoke(ScheduledTask task)
         {
-            //TODO: Add code to perform your task in background
             AgentContext db = new AgentContext();
 
             if (db.DatabaseExists() == true)

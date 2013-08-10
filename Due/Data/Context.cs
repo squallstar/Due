@@ -31,7 +31,7 @@ namespace Due.Data
             {
                 var count = (from Todo item in todos where item.Completed == false && item.DueDate <= DateTime.Today select item).Count();
 
-                var firstItem = (from Todo s in todos where s.Completed == false && s.DueDate <= DateTime.Today orderby s.DateInsert select s).FirstOrDefault();
+                var firstItem = (from Todo s in todos where s.Completed == false && s.DueDate <= DateTime.Today orderby Guid.NewGuid() select s).FirstOrDefault();
 
                 StandardTileData newTile = new StandardTileData
                 {
@@ -61,7 +61,6 @@ namespace Due.Data
                         var secondItem = (from Todo s in todos where s.Completed == false && s.DueDate <= DateTime.Today && s.ID != firstItem.ID orderby s.DateInsert select s).FirstOrDefault();
                         if (secondItem != null)
                         {
-                            newTile.BackBackgroundImage = null;
                             newTile.BackContent = firstItem.Title + "\r\n" + secondItem.Title;
                             newTile.BackTitle = count > 2 ? "+" + (count-2) + " more" :  "Due today";
                         }
