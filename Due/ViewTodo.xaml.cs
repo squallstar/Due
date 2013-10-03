@@ -147,5 +147,11 @@ namespace Due
         {
             (Application.Current as App).RestoreColors();
         }
+
+        private void todoTitle_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            this.item.Title = this.todoTitle.Text;
+            (Application.Current as App).db.SubmitChanges();
+        }
     }
 }

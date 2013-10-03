@@ -113,6 +113,12 @@ namespace Due.Data
         {
             get
             {
+
+                if (Completed)
+                {
+                    return "COMPLETED!";
+                }
+
                 string x = Utilities.TimeAgo(this.DateInsert, "added").ToUpper();
 
                 if (ManualDueDate != null && ManualDueDate == true)
