@@ -95,7 +95,7 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Opacity="{Binding UIOpacity}" Margin="9, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="36" LineHeight="31" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
+                                <TextBlock Opacity="{Binding UIOpacity}" Margin="9, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-L" FontSize="36" LineHeight="31" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
                                 <TextBlock Grid.Row="1" Margin="10, 6, 10, -6" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" FontSize="18" LineHeight="22" Text="{Binding TimeAgo}" TextWrapping="Wrap" Foreground="#D4D4D4"/>
                             </Grid>
                         </DataTemplate>
@@ -121,7 +121,7 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Opacity="{Binding UIOpacity}" Margin="9, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="36" LineHeight="31" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
+                                <TextBlock Opacity="{Binding UIOpacity}" Margin="9, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-L" FontSize="36" LineHeight="31" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
                                 <TextBlock Grid.Row="1" Margin="10, 6, 10, -6" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" FontSize="18" LineHeight="22" Text="{Binding TimeAgo}" TextWrapping="Wrap" Foreground="#D4D4D4"/>
                             </Grid>
                         </DataTemplate>
@@ -137,6 +137,7 @@
             <shell:ApplicationBarIconButton IconUri="/Resources/add.png" Text="Add new" Click="AddNew"/>
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="remove completed items" Click="ClearCompleted"/>
+                <shell:ApplicationBarMenuItem Text="lock screen settings" Click="ClickLockScreen"/>
                 <shell:ApplicationBarMenuItem Text="credits" Click="About"/>
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>

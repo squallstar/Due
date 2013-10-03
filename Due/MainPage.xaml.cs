@@ -15,6 +15,7 @@ using Microsoft.Phone.Tasks;
 using Microsoft.Phone.Data.Linq;
 using System.Collections.ObjectModel;
 using System.IO.IsolatedStorage;
+using Windows.Phone.System.UserProfile;
 
 namespace Due
 {
@@ -32,7 +33,7 @@ namespace Due
             InitializeComponent();
 
             // Set the data context of the listbox control to the sample data
-            DataContext = App.ViewModel;
+            //DataContext = App.ViewModel;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
 
             this.db = Context.Current;
@@ -158,6 +159,12 @@ namespace Due
 
                 NavigationService.Navigate(new Uri("/ViewTodo.xaml", UriKind.Relative));
             }
+        }
+
+        private async void ClickLockScreen(object sender, EventArgs e)
+        {
+            // Launch URI for the lock screen settings screen.
+            var op = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings-lock:"));
         }
     }
 }

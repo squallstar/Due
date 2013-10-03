@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Due
 {
-    class AppUtilities
+    public class AppUtilities
     {
         public static void SetMainViewIndex(DateTime dt)
         {
