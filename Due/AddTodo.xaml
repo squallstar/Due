@@ -65,7 +65,7 @@
 
                 <Grid Height="13" Background="#D8D8D8" VerticalAlignment="Bottom"></Grid>
                 <Grid Grid.Column="1">
-                    <TextBox AcceptsReturn="True" TextWrapping="Wrap" Name="txtDescription" FontFamily="/Fonts/Light.ttf#BentonSans-Light" FontSize="24" Text="Hello world by Nicholas" Foreground="#777777" Background="Transparent" Height="Auto" Padding="0" Margin="0" InputScope="Text" />
+                    <TextBox AcceptsReturn="True" TextWrapping="Wrap" Name="txtDescription" FontFamily="/Fonts/Light.ttf#BentonSans-Light" FontSize="24" Text="Hello world by Nicholas" Foreground="#777777" BorderThickness="0" Background="Transparent" Height="Auto" Padding="0" Margin="0" InputScope="Text" />
                 </Grid>
                 <Grid Grid.Column="2" Height="13" Background="#D8D8D8" VerticalAlignment="Bottom"></Grid>
 
