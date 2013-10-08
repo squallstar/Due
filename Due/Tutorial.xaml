@@ -45,7 +45,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <TextBlock Margin="0,30,0,30" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" FontSize="25" Text="Ok, I got it!" TextWrapping="Wrap" Foreground="#999999" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
+                <TextBlock Margin="0,30,0,30" FontFamily="Fonts/Medium.ttf#BentonSans" FontSize="25" Text="Ok, I got it!" TextWrapping="Wrap" Foreground="#999999" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center"/>
             </Grid>
 
         </StackPanel>

@@ -47,7 +47,7 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <Image Source="/ApplicationIcon.png" Canvas.ZIndex="0" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="17, 14, 0, 0"/>
-            <TextBlock Grid.Column="1" Canvas.ZIndex="0" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" Text="DUE" Margin="5, 20, 0, 0" FontSize="16" Foreground="White" />
+            <TextBlock Grid.Column="1" Canvas.ZIndex="0" FontFamily="Fonts/Medium.ttf#BentonSans" Text="DUE" Margin="5, 20, 0, 0" FontSize="16" Foreground="White" />
         </Grid>
         
         <!--Pivot Control-->
@@ -57,7 +57,7 @@
 
                 <controls:PivotItem.Header>
                     <Grid Canvas.ZIndex="1" Margin="0, 25, 0, 0">
-                        <TextBlock Canvas.ZIndex="0" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" Text="TODAY" Margin="0,0,-10,0" FontSize="31" Foreground="White" />
+                        <TextBlock Canvas.ZIndex="0" FontFamily="Fonts/Medium.ttf#BentonSans" Text="TODAY" Margin="0,0,-10,0" FontSize="31" Foreground="White" />
                     </Grid>
                 </controls:PivotItem.Header>
 
@@ -69,8 +69,8 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Opacity="{Binding UIOpacity}" Margin="9, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-Light" FontSize="36" LineHeight="31" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
-                                <TextBlock Grid.Row="1" Margin="10, 6, 10, -6" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" FontSize="18" LineHeight="22" Text="{Binding TimeAgo}" TextWrapping="Wrap" Foreground="#D4D4D4"/>
+                                <TextBlock Opacity="{Binding UIOpacity}" Margin="9, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans" FontSize="36" LineHeight="31" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
+                                <TextBlock Grid.Row="1" Margin="10, 6, 10, -6" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans" FontSize="18" LineHeight="22" Text="{Binding TimeAgo}" TextWrapping="Wrap" Foreground="#D4D4D4"/>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -82,7 +82,7 @@
 
                 <controls:PivotItem.Header>
                     <Grid Canvas.ZIndex="1" Margin="0, 25, 0, 0">
-                        <TextBlock Canvas.ZIndex="0" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" Text="TOMORROW" Margin="0,0,-10,0" FontSize="31" Foreground="White" />
+                        <TextBlock Canvas.ZIndex="0" FontFamily="Fonts/Medium.ttf#BentonSans" Text="TOMORROW" Margin="0,0,-10,0" FontSize="31" Foreground="White" />
                     </Grid>
                 </controls:PivotItem.Header>
 
@@ -95,8 +95,8 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Opacity="{Binding UIOpacity}" Margin="9, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-L" FontSize="36" LineHeight="31" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
-                                <TextBlock Grid.Row="1" Margin="10, 6, 10, -6" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" FontSize="18" LineHeight="22" Text="{Binding TimeAgo}" TextWrapping="Wrap" Foreground="#D4D4D4"/>
+                                <TextBlock Opacity="{Binding UIOpacity}" Margin="9, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans" FontSize="36" LineHeight="31" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
+                                <TextBlock Grid.Row="1" Margin="10, 6, 10, -6" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans" FontSize="18" LineHeight="22" Text="{Binding TimeAgo}" TextWrapping="Wrap" Foreground="#D4D4D4"/>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
@@ -108,7 +108,7 @@
 
                 <controls:PivotItem.Header>
                     <Grid Canvas.ZIndex="1" Margin="0, 25, 0, 0">
-                        <TextBlock Canvas.ZIndex="0" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" Text="SOMEDAY" Margin="0,0,-10,0" FontSize="31" Foreground="White" />
+                        <TextBlock Canvas.ZIndex="0" FontFamily="Fonts/Medium.ttf#BentonSans" Text="SOMEDAY" Margin="0,0,-10,0" FontSize="31" Foreground="White" />
                     </Grid>
                 </controls:PivotItem.Header>
 
@@ -121,8 +121,8 @@
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Opacity="{Binding UIOpacity}" Margin="9, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans-L" FontSize="36" LineHeight="31" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
-                                <TextBlock Grid.Row="1" Margin="10, 6, 10, -6" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans-Medium" FontSize="18" LineHeight="22" Text="{Binding TimeAgo}" TextWrapping="Wrap" Foreground="#D4D4D4"/>
+                                <TextBlock Opacity="{Binding UIOpacity}" Margin="9, 3, 10, 0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans" FontSize="36" LineHeight="31" Text="{Binding Title}" TextWrapping="Wrap" Foreground="Black"/>
+                                <TextBlock Grid.Row="1" Margin="10, 6, 10, -6" Grid.Column="1" FontFamily="Fonts/Medium.ttf#BentonSans" FontSize="18" LineHeight="22" Text="{Binding TimeAgo}" TextWrapping="Wrap" Foreground="#D4D4D4"/>
                             </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
