@@ -3,7 +3,9 @@
   <DefaultLanguage xmlns="" code="en-US" />
   <App xmlns="" ProductID="{737775a9-35ab-41a2-b44e-996fb93e9e00}" Title="Due" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Nicholas Valbusa" Description="Due organises your todos between three different lists." Publisher="Squallstar Studio" BitsPerPixel="32" PublisherID="{e3f0d7b2-5284-41f2-b610-5124cbaab9c7}">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
-    <Capabilities></Capabilities>
+    <Capabilities>
+      <Capability Name="ID_CAP_SPEECH_RECOGNITION" />
+    </Capabilities>
     <Tasks>
       <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
       <ExtendedTask Name="BackgroundTask">
@@ -17,9 +19,12 @@
           <Count>0</Count>
           <BackgroundImageURI IsResource="false" IsRelative="true">Background.png</BackgroundImageURI>
           <Title>Due</Title>
-          <BackContent></BackContent>
-          <BackBackgroundImageURI></BackBackgroundImageURI>
-          <BackTitle></BackTitle>
+          <BackContent>
+          </BackContent>
+          <BackBackgroundImageURI>
+          </BackBackgroundImageURI>
+          <BackTitle>
+          </BackTitle>
           <DeviceLockImageURI IsRelative="true" IsResource="false">LockScreen.png</DeviceLockImageURI>
           <HasLarge>false</HasLarge>
         </TemplateFlip>

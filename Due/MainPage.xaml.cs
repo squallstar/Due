@@ -72,6 +72,19 @@ namespace Due
                 App.JumpToView = "";
             }
 
+            if (NavigationContext.QueryString.ContainsKey("today"))
+            {
+                mainPivot.SelectedIndex = 0;
+            }
+            else if (NavigationContext.QueryString.ContainsKey("tomorrow"))
+            {
+                mainPivot.SelectedIndex = 1;
+            }
+            else if (NavigationContext.QueryString.ContainsKey("someday"))
+            {
+                mainPivot.SelectedIndex = 2;
+            }
+
             this.RefreshData();
         }
 

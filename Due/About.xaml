@@ -42,8 +42,8 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Margin="30, 60, 30, 0">
-            <TextBlock Margin="0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans" FontSize="40" LineHeight="35" Text="Due - v1.3.1" TextWrapping="Wrap" Foreground="Black"/>
-            <TextBlock Margin="0, 20, 0, 0" FontFamily="Fonts/Light.ttf#BentonSans" FontSize="24" LineHeight="35" Text="Changelog: Lock screen notifications. Coming soon: Dropbox/Skydrive integration and lot of other stuff." TextWrapping="Wrap" Foreground="Black"/>
+            <TextBlock Margin="0" Grid.Column="1" FontFamily="Fonts/Light.ttf#BentonSans" FontSize="40" LineHeight="35" Text="Due - v1.4" TextWrapping="Wrap" Foreground="Black"/>
+            <TextBlock Margin="0, 20, 0, 0" FontFamily="Fonts/Light.ttf#BentonSans" FontSize="24" LineHeight="35" Text="Changelog: Voice commands (Windows Phone 8) and Cortana (Windows Phone 8.1)" TextWrapping="Wrap" Foreground="Black"/>
 
             <Grid Height="1" Background="#CCC" Margin="0,20,0,3"></Grid>
             <TextBlock Margin="0, 20, 0, 0" FontFamily="Fonts/Light.ttf#BentonSans" FontSize="24" LineHeight="35" Text="Thanks for trying out Due, an experimental project created by Nicholas Valbusa (Squallstar Studio), which recently made Collector for Windows Phone." TextWrapping="Wrap" Foreground="#999999"/>

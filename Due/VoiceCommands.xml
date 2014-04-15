@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.0">
+  <CommandSet xml:lang="en-US">
+    <CommandPrefix>Due</CommandPrefix>
+    <Example> add new task for today </Example>
+
+    <Command Name="AddToday">
+      <Example> add new task for today </Example>
+      <ListenFor> add [new task for] today </ListenFor>
+      <ListenFor> create [new task for] today </ListenFor>
+      <ListenFor> make [a] note [for] today </ListenFor>
+      <ListenFor> take [a] note [for] today </ListenFor>
+      <Feedback>Creating a new item for today... </Feedback>
+      <Navigate Target="/AddTodo.xaml?today"/>
+    </Command>
+
+    <Command Name="AddTomorrow">
+      <Example> make a note for tomorrow </Example>
+      <ListenFor> add [new task for] tomorrow </ListenFor>
+      <ListenFor> create [new task for] tomorrow </ListenFor>
+      <ListenFor> make [a] note [for] tomorrow </ListenFor>
+      <ListenFor> take [a] note [for] tomorrow </ListenFor>
+      <Feedback>Creating a new item for tomorrow... </Feedback>
+      <Navigate Target="/AddTodo.xaml?tomorrow"/>
+    </Command>
+
+    <Command Name="AddSomeday">
+      <Example> create new task for someday </Example>
+      <ListenFor> add [new task for] someday </ListenFor>
+      <ListenFor> create [new task for] someday </ListenFor>
+      <ListenFor> make [a] note [for] someday </ListenFor>
+      <ListenFor> take [a] note [for] someday </ListenFor>
+      <Feedback>Creating a new item for someday... </Feedback>
+      <Navigate Target="/AddTodo.xaml?someday"/>
+    </Command>
+
+    <Command Name="ShowToday">
+      <Example> today </Example>
+      <ListenFor> [show] today </ListenFor>
+      <Feedback>Showing items due today... </Feedback>
+      <Navigate Target="/MainPage.xaml?today"/>
+    </Command>
+
+    <Command Name="ShowTomorrow">
+      <Example> tomorrow </Example>
+      <ListenFor> [show] tomorrow </ListenFor>
+      <Feedback>Showing items due tomorrow... </Feedback>
+      <Navigate Target="/MainPage.xaml?tomorrow"/>
+    </Command>
+
+    <Command Name="ShowSomeday">
+      <Example> someday </Example>
+      <ListenFor> [show] someday </ListenFor>
+      <Feedback>Showing items due someday... </Feedback>
+      <Navigate Target="/MainPage.xaml?someday"/>
+    </Command>
+   
+  </CommandSet>
+</VoiceCommands>
+
+<!-- Example -->
+<!--
+
+    The preceding example demonstrates a hypothetical game called 'Contoso ROD3O!' which defines two
+    Commands that a user can say to either start a new game or replay one of three levels in the game.  
+    To initiate the PlayGame command, a user can say "Contoso Rodeo play  a new game" or "Contoso Rodeo
+    play new game". Either phrase will start a new game. To initiate the second Command, a user can say
+    "Contoso Rodeo replay level one", "Contoso Rodeo replay level two", or "Contoso Rodeo replay level 
+    three".
+    The second Command demonstrates how to use a PhraseList with a Command. PhraseLists can be updated 
+    dynamically by the application (e.g., if a user unlocks a new level or game or feature, you might 
+    want to allow the user to give commands for newfeatures after voice commands are already registered.)
+    The third Command demonstrates how the {*} sequence can parallel another command to recognize speech
+    that is not defined in the CommandSet.
+
+  Note:
+
+      [and] Indicates that "and" is optional. Making connecting words like this optional
+            can help both "Contoso Rodeo, play new game" and "open Contoso Rodeo and play
+            a new game" feel natural to speak.
+                 
+      {number} Defined separately from the Command, mapping to "one" or "two" or "three".
+
+-->

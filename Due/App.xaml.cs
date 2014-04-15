@@ -15,6 +15,8 @@ using Microsoft.Phone.Shell;
 using Due.Data;
 using Microsoft.Phone.Data.Linq;
 using Microsoft.Phone.Scheduler;
+using Windows.Phone.Speech.VoiceCommands;
+using System.IO.IsolatedStorage;
 
 namespace Due
 {
@@ -150,6 +152,20 @@ namespace Due
             }
 
             StartPeriodicAgent();
+            SetVoiceCommands();
+        }
+
+        public async void SetVoiceCommands()
+        {
+            if (!IsolatedStorageSettings.ApplicationSettings.Contains("voice-commands"))
+            {
+                try
+                {
+                    await VoiceCommandService.InstallCommandSetsFromFileAsync(new Uri("ms-appx:///VoiceCommands.xml"));
+                    IsolatedStorageSettings.ApplicationSettings.Add("voice-commands", true);
+                }
+                catch (Exception) { }
+            }
         }
 
         public void OverrideColors()
