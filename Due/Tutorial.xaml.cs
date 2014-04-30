@@ -22,6 +22,8 @@ namespace Due
         {
             base.OnNavigatedTo(e);
 
+            GoogleAnalytics.EasyTracker.GetTracker().SendView("tutorial");
+
             if (NavigationService.CanGoBack)
             {
                 NavigationService.RemoveBackEntry();

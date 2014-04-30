@@ -58,6 +58,8 @@ namespace Due
                 NavigationService.Navigate(new Uri("/Tutorial.xaml", UriKind.Relative));
             }
 
+            GoogleAnalytics.EasyTracker.GetTracker().SendView("main-view");
+
             if (NavigationService.CanGoBack)
             {
                 NavigationService.RemoveBackEntry();

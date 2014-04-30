@@ -16,6 +16,8 @@ namespace Due
         public About()
         {
             InitializeComponent();
+
+            GoogleAnalytics.EasyTracker.GetTracker().SendView("about");
         }
 
         private void btnCollectorTry_Tap(object sender, System.Windows.Input.GestureEventArgs e)

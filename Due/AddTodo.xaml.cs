@@ -25,6 +25,8 @@ namespace Due
         {
             txtDescription.Focus();
 
+            GoogleAnalytics.EasyTracker.GetTracker().SendView("add-new");
+
             if (NavigationContext.QueryString.ContainsKey("today"))
             {
                 PageTitle.Text = "DUE TODAY";
