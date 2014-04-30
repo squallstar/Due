@@ -16,48 +16,38 @@ namespace Due.Data
 
         public Table<Todo> todos;
 
+        /// <summary>
+        /// THIS METHOD SHOULD ALSO BE COPIED IN THE AGENT
+        /// </summary>
         public void UpdateTileCount()
         {
             ShellTile appTile = ShellTile.ActiveTiles.First();
             if (appTile != null)
             {
-                var count = (from Todo item in todos where item.Completed == false && item.DueDate <= DateTime.Today select item).Count();
+                var items = (from Todo item in todos where item.Completed == false && item.DueDate <= DateTime.Today orderby Guid.NewGuid() select item).ToList();
+                var count = items.Count;
 
-                var firstItem = (from Todo s in todos where s.Completed == false && s.DueDate <= DateTime.Today orderby Guid.NewGuid() select s).FirstOrDefault();
-
-                StandardTileData newTile = new StandardTileData
+                IconicTileData newTile = new IconicTileData
                 {
                     Title = "Due",
-                    BackgroundImage = new Uri("Background.png", UriKind.Relative),
-                    Count = count
+                    Count = count,
+                    SmallIconImage = new Uri("/Resources/iconic-small.png", UriKind.Relative),
+                    IconImage = new Uri("/Resources/iconic.png", UriKind.Relative)
                 };
 
-                if (firstItem == null)
+                if (count > 0)
                 {
-                    newTile.BackBackgroundImage = new Uri("Background.png", UriKind.Relative);
-                    newTile.BackContent = "";
-                    newTile.BackTitle = "Nothing to do";
+                    newTile.WideContent1 = items[0].Title;
                 }
-                else
+
+                if (count > 1)
                 {
-                    newTile.BackBackgroundImage = new Uri("/Resources/BackBackground.png", UriKind.Relative);
-                    newTile.BackContent = firstItem.Title;
-                    newTile.BackTitle = "Due today";
+                    newTile.WideContent1 = items[1].Title;
+                }
 
-                    int length = 17;
-                    string title = firstItem.Title.Length > length ? firstItem.Title.Substring(0, length - 1) + "..." : firstItem.Title;
-                    newTile.Title = title;
-
-                    if (count > 1)
-                    {
-                        var secondItem = (from Todo s in todos where s.Completed == false && s.DueDate <= DateTime.Today && s.ID != firstItem.ID orderby s.DateInsert select s).FirstOrDefault();
-                        if (secondItem != null)
-                        {
-                            newTile.BackContent = firstItem.Title + "\r\n" + secondItem.Title;
-                            newTile.BackTitle = count > 2 ? "+" + (count - 2) + " more" : "Due today";
-                        }
-
-                    }
+                if (count > 2)
+                {
+                    newTile.WideContent1 = items[2].Title;
                 }
 
                 appTile.Update(newTile);

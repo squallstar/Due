@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{737775a9-35ab-41a2-b44e-996fb93e9e00}" Title="Due" RuntimeType="Silverlight" Version="1.1.0.0" Genre="apps.normal" Author="Nicholas Valbusa" Description="Due organises your todos between three different lists." Publisher="Squallstar Studio" BitsPerPixel="32" PublisherID="{e3f0d7b2-5284-41f2-b610-5124cbaab9c7}">
+  <App xmlns="" ProductID="{737775a9-35ab-41a2-b44e-996fb93e9e00}" Title="Due" RuntimeType="Silverlight" Version="1.5.0.0" Genre="apps.normal" Author="Nicholas Valbusa" Description="Due organises your todos between three different lists." Publisher="Squallstar Studio" BitsPerPixel="32" PublisherID="{e3f0d7b2-5284-41f2-b610-5124cbaab9c7}">
     <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_SPEECH_RECOGNITION" />

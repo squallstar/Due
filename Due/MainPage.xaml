@@ -138,7 +138,7 @@
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="remove completed items" Click="ClearCompleted"/>
                 <shell:ApplicationBarMenuItem Text="lock screen settings" Click="ClickLockScreen"/>
-                <shell:ApplicationBarMenuItem Text="credits" Click="About"/>
+                <shell:ApplicationBarMenuItem Text="about" Click="About"/>
             </shell:ApplicationBar.MenuItems>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
