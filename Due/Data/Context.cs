@@ -40,7 +40,8 @@ namespace Due.Data
                     Title = "Due",
                     Count = count,
                     SmallIconImage = new Uri("/Resources/iconic-small.png", UriKind.Relative),
-                    IconImage = new Uri("/Resources/iconic.png", UriKind.Relative)
+                    IconImage = new Uri("/Resources/iconic.png", UriKind.Relative),
+                    BackgroundColor = new System.Windows.Media.Color{ A = 0, R = 0, G = 0, B = 0 }
                 };
 
                 if (count > 0)
@@ -50,12 +51,12 @@ namespace Due.Data
 
                 if (count > 1)
                 {
-                    newTile.WideContent1 = items[1].Title;
+                    newTile.WideContent2 = items[1].Title;
                 }
 
                 if (count > 2)
                 {
-                    newTile.WideContent1 = items[2].Title;
+                    newTile.WideContent3 = items[2].Title;
                 }
 
                 appTile.Update(newTile);
