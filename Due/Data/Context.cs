@@ -41,7 +41,10 @@ namespace Due.Data
                     Count = count,
                     SmallIconImage = new Uri("/Resources/iconic-small.png", UriKind.Relative),
                     IconImage = new Uri("/Resources/iconic.png", UriKind.Relative),
-                    BackgroundColor = new System.Windows.Media.Color{ A = 0, R = 0, G = 0, B = 0 }
+                    BackgroundColor = new System.Windows.Media.Color{ A = 0, R = 0, G = 0, B = 0 },
+                    WideContent1 = "",
+                    WideContent2 = "",
+                    WideContent3 = ""
                 };
 
                 if (count > 0)
