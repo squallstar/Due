@@ -157,12 +157,12 @@ namespace Due
 
         public async void SetVoiceCommands()
         {
-            if (!IsolatedStorageSettings.ApplicationSettings.Contains("voice-commands"))
+            if (!IsolatedStorageSettings.ApplicationSettings.Contains("voice-commands-v2"))
             {
                 try
                 {
                     await VoiceCommandService.InstallCommandSetsFromFileAsync(new Uri("ms-appx:///VoiceCommands.xml"));
-                    IsolatedStorageSettings.ApplicationSettings.Add("voice-commands", true);
+                    IsolatedStorageSettings.ApplicationSettings.Add("voice-commands-v2", true);
                 }
                 catch (Exception) { }
             }

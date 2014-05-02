@@ -2,7 +2,7 @@
 
 <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.0">
   <CommandSet xml:lang="en-US">
-    <CommandPrefix>Due</CommandPrefix>
+    <CommandPrefix>Do</CommandPrefix>
     <Example> add new task for today </Example>
 
     <Command Name="AddToday">
